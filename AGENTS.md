@@ -1,0 +1,1 @@
+Read README.md, claims.json and VERIFICATION-RECORD.md. Preserve ell<p, the ambient coefficient Jacobian, and the separate zero-vector argument. Do not claim novelty, global nonidentifiability at every singular point, or finite-data inference. Run the three README checks in an existing SymPy 1.14.0 environment.

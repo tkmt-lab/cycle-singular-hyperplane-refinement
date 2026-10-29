@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs}
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{2em}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}
+\DeclareMathOperator{\rank}{rank}
+\title{A quantifier refinement for singular hyperplanes\\in directed-cycle compartmental models}
+\author{Tatsuhiko Takimoto\\Independent researcher}
+\date{Draft, 30 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For a directed-cycle linear compartmental model with input at vertex \(1\) and output at vertex \(p\), we study the hyperplanes in Conjecture~4.6 of Ahmed et al., arXiv:2412.05283v3. The conjecture allows a leak at the output vertex. A positive three-compartment example on the proposed hyperplane has a full-column-rank coefficient Jacobian. With the leak index restricted to \(\ell<p\), we prove the proposed inclusion for every cycle size. A polynomial kernel vector gives the rank defect, and a separate column relation covers the points where that vector vanishes. The argument uses the known coefficient map and applies to the entire real hyperplane, including zero and negative rates.
+\end{abstract}
+
+\section{The question and its scope}
+Ahmed, Crepeau, Dessauer, Edozie, Garcia-Lopez, Grimsley, Lopez Garcia, Neri, and Shiu~\cite{Ahmed} formulate Conjecture~4.6 in their study of directed-cycle and catenary models. Their classification of generically locally identifiable cycles and their investigation of singular loci provide the setting for this note. We use the coefficient formula in their Lemma~3.10, which they credit to Gerberding, Obatake, and Shiu~\cite{GOS}.
+
+Write \(L\subseteq[n]\) for the leak set, \(r_i=k_{i+1,i}\) for the edge rate leaving vertex \(i\), with indices taken cyclically, and \(\lambda_i=k_{0i}\) for \(i\in L\). The input is at \(1\) and the output at \(p\). For a generically locally identifiable model, Conjecture~4.6 of~\cite{Ahmed} proposes
+\begin{equation}\label{eq:original}
+ \{r_\ell+\lambda_\ell=r_a\}\subseteq\mathcal S_M
+ \quad\text{for all }a\in[p-1]\setminus L,\quad
+ \ell\in L\cap[p].
+\end{equation}
+Here \(\mathcal S_M\) is the rank-defect set of the coefficient Jacobian, as defined in~\cite[Definition~4.1]{Ahmed}. The quantifier in~\eqref{eq:original} includes \(\ell=p\). Theorem~\ref{thm:interior} establishes the inclusion with \(L\cap[p-1]\) in its place, while Proposition~\ref{prop:endpoint} supplies an endpoint counterexample.
+
+Our comparison is specifically with the stated arXiv version. We have not read the full SIAM journal version or the paper by Dai and Shao~\cite{DS}. The relevance of the latter to this particular hyperplane inclusion has not been established. We therefore make no claim that this refinement or the endpoint example is absent from prior work or corrections. The results here concern the displayed inclusion, not the other theorems in~\cite{Ahmed}, a classification of the entire singular locus, or pointwise global identifiability.
+
+\section{The coefficient map}
+For completeness, the state equations are
+\[
+ \dot x_1=r_nx_n-d_1x_1+u,\qquad
+ \dot x_i=r_{i-1}x_{i-1}-d_ix_i\ (2\leq i\leq n),
+ \qquad y=x_p,
+\]
+where \(d_i=r_i+\lambda_i\) for \(i\in L\), and \(d_i=r_i\) otherwise. Only the leak rates with indices in \(L\) are parameters. Put
+\[
+ R=\prod_{i=1}^n r_i,\qquad
+ \kappa=\prod_{i=1}^{p-1}r_i.
+\]
+Let \(e_j\) be the elementary symmetric polynomial of degree \(j\) in the labelled variables \(d_1,\ldots,d_n\), and let \(e_j^*\) be the corresponding polynomial in \(d_{p+1},\ldots,d_n\). Equal numerical values remain separate labelled arguments.
+
+For nonempty \(L\), the known formula~\cite[Lemma~3.10]{Ahmed} gives
+\begin{equation}\label{eq:map}
+ c=(e_1,\ldots,e_{n-1},e_n-R,\kappa,
+       \kappa e_1^*,\ldots,\kappa e_{n-p}^*).
+\end{equation}
+The last block is empty if \(p=n\). Equivalently, the monic denominator and input numerator of the input-output equation are
+\[
+ D(s)=\prod_{i=1}^n(s+d_i)-R,\qquad
+ N(s)=\kappa\prod_{i=p+1}^n(s+d_i).
+\]
+We differentiate \(c\) with respect to all \(n+|L|\) independent rate parameters before imposing a hyperplane relation. Initial states are not additional columns. The definition used throughout is
+\[
+ \mathcal S_M=\{\theta\in\R^{n+|L|}:
+                  \rank Dc(\theta)<n+|L|\}.
+\]
+Its interpretation here is precisely Jacobian rank loss; a nonzero differential kernel alone does not assert a continuous family of indistinguishable parameters.
+
+\section{Inclusion before the output}
+\begin{theorem}[Interior leak index]\label{thm:interior}
+Let \(n\geq3\), and let \(M\) be a generically locally identifiable directed-cycle model with input \(\{1\}\), output \(\{p\}\), and leak set \(L\). For every
+\[
+ a\in[p-1]\setminus L,\qquad \ell\in L\cap[p-1],
+\]
+the entire real hyperplane \(H_{a,\ell}=\{r_\ell+\lambda_\ell=r_a\}\) is contained in \(\mathcal S_M\). No order relation between \(a\) and \(\ell\) is required.
+\end{theorem}
+
+\begin{proof}
+The indices are distinct, \(d_a=r_a\), and the presence of \(\ell\) ensures \(L\ne\varnothing\). Set \(h=d_\ell-d_a\). Define a polynomial direction \(v\), with all unlisted components zero, by
+\begin{equation}\label{eq:direction}
+ v_{r_a}=r_a,\qquad v_{r_\ell}=-r_\ell,\qquad
+ v_{\lambda_\ell}=r_\ell-r_a.
+\end{equation}
+For directional differentiation \(V=v\cdot\nabla\),
+\[
+ Vd_a=r_a,\qquad Vd_\ell=-r_a,\qquad Vd_i=0\ (i\ne a,\ell).
+\]
+Denote by \(e_j^{\widehat{a,\ell}}\) the elementary symmetric polynomial after deleting the two labelled arguments \(d_a,d_\ell\), with \(e_0=1\) and \(e_{-1}=0\). Splitting the terms according to their occurrence of \(d_a,d_\ell\) gives
+\[
+ (\partial_{d_a}-\partial_{d_\ell})e_j
+       =(d_\ell-d_a)e_{j-2}^{\widehat{a,\ell}}.
+\]
+Consequently \(Ve_j=r_a h e_{j-2}^{\widehat{a,\ell}}\).
+
+The two edge contributions to \(VR\) are \(R\) and \(-R\), so \(VR=0\) as a polynomial identity, including at zero rates. Since both indices belong to \([p-1]\), the same cancellation gives \(V\kappa=0\). Neither index occurs in the tail variables of \(e_j^*\), so \(Ve_j^*=0\). Thus, with the first block having \(n\) entries,
+\begin{equation}\label{eq:kernel}
+ Dc\,v=r_a h
+  \bigl(e_{-1}^{\widehat{a,\ell}},e_0^{\widehat{a,\ell}},
+       \ldots,e_{n-2}^{\widehat{a,\ell}},0,\ldots,0\bigr)^T.
+\end{equation}
+On \(H_{a,\ell}\), this is zero. If \((r_a,r_\ell)\ne(0,0)\), then \(v\ne0\), proving rank loss.
+
+If \(r_a=r_\ell=0\), the hyperplane relation also gives \(\lambda_\ell=0\). Compare the \(r_a\) and \(\lambda_\ell\) columns of \(Dc\). Their symmetric-polynomial entries agree because \(d_a=d_\ell=0\). The \(r_a\) derivative of \(R\) contains the other zero factor \(r_\ell\), while its \(\lambda_\ell\) derivative is zero. The same statement holds for \(\kappa\), because \(\ell<p\). The tail polynomials depend on neither variable. The two columns therefore coincide, yielding the nonzero kernel vector \(e_{r_a}-e_{\lambda_\ell}\). This covers every real point of the hyperplane.
+\end{proof}
+
+\begin{corollary}\label{cor:minors}
+Every \((n+|L|)\)-row square minor of \(Dc\) is divisible, as a polynomial, by \(r_\ell+\lambda_\ell-r_a\) under the hypotheses of Theorem~\ref{thm:interior}.
+\end{corollary}
+\begin{proof}
+Each such minor vanishes on the entire real hyperplane. Substitution \(r_a=r_\ell+\lambda_\ell\), or polynomial division by its defining linear polynomial, gives the assertion.
+\end{proof}
+
+The theorem is vacuous when the indicated index sets are empty. Its proof is valid for zero and negative rates as well as positive ones. The direction~\eqref{eq:direction} need not be tangent to the hyperplane: \(Vh=-2r_a\). The Jacobian in question is that of the ambient parameter map, not of its restriction to \(H_{a,\ell}\).
+
+\section{The output endpoint}
+\begin{proposition}\label{prop:endpoint}
+The hyperplane inclusion~\eqref{eq:original}, with its endpoint \(\ell=p\), fails for a positive parameter point in a generically locally identifiable three-compartment cycle.
+\end{proposition}
+\begin{proof}
+Take input \(1\), output \(2\), and \(L=\{2\}\). Write
+\((A,B,C,\lambda)=(r_1,r_2,r_3,\lambda_2)\). Then
+\[
+ M=\begin{pmatrix}-A&0&C\\ A&-B-\lambda&0\\0&B&-C\end{pmatrix},
+ \quad D(s)=(s+A)(s+B+\lambda)(s+C)-ABC,\quad
+ N(s)=A(s+C).
+\]
+The coefficient map is
+\[
+ c=(A+B+C+\lambda,\ AB+A\lambda+AC+BC+C\lambda,\
+       AC\lambda,\ A,\ AC).
+\]
+At \((A,B,C,\lambda)=(2,1,3,1)\), the relation \(B+\lambda=A\) holds and every rate is positive. The full coefficient Jacobian, with columns \(A,B,C,\lambda\), is
+\[
+ J=\begin{pmatrix}
+ 1&1&1&1\\5&5&4&5\\3&0&2&6\\1&0&0&0\\3&0&2&0
+ \end{pmatrix}.
+\]
+Its minor on rows \(1,3,4,5\) is \(-12\); symbolically the same minor is \(-A^2C\). Thus \(J\) has column rank \(4\). The nonzero minor also verifies generic local identifiability of this model, and the single-leak case satisfies the model assumption in~\cite{Ahmed}. With \(a=1\) and \(\ell=p=2\), all the stated index conditions hold, yet the point lies outside \(\mathcal S_M\).
+\end{proof}
+
+The endpoint explains the boundary of the proof of Theorem~\ref{thm:interior}. If \(\ell=p\), then \(r_\ell\) is absent from \(\kappa\). The direction~\eqref{eq:direction} now satisfies
+\[
+ V\kappa=\kappa.
+\]
+At positive rates, this is nonzero. The cancellation for the numerator coefficients is lost. This observation explains why that kernel construction stops at \(\ell<p\); by itself it does not assert regularity at every endpoint point. Proposition~\ref{prop:endpoint} provides the specific full-rank witness required to refute the universal endpoint inclusion.
+
+\section{Exact checks and assurance}
+For the two-leak check, take \(n=4\), \(p=3\), and \(L=\{2,4\}\).
+In the parameter order \((r_1,r_2,r_3,r_4,\lambda_2,\lambda_4)\), set
+\(\theta=(3,1,5,7,2,11)\).
+This point satisfies \(r_2+\lambda_2=r_1\), and
+\[
+Dc(\theta)(3,-1,0,0,-2,0)^T=0.
+\]
+The minor with rows \(1,2,3,4,5\) and columns \(1,2,3,4,6\) is \(11700\), so the rank is exactly \(5\). Changing only \(r_1\) to \(4\) gives determinant \(640\) and rank \(6\).
+
+The accompanying exact-arithmetic programs reproduce the endpoint witness and finite interior, zero-rate, negative-rate, and two-leak checks. These computations supplement the general polynomial proof; they do not replace it. The claims are supported by ordinary mathematical proofs and staged computational checks, with no proof-assistant certification or human peer-review claim. The verification history and the information available to each checker are recorded separately in \texttt{VERIFICATION-RECORD.md}.
+
+\paragraph{AI assistance.}
+AI assistance was used to develop and check the arguments, implement exact computations, and prepare this draft. The author retains responsibility for the mathematical claims, source attribution, and any subsequent dissemination.
+
+
+\appendix
+\section{Computational materials}
+The companion packet is version \texttt{draft-2026-10-30-r1}.\par
+Its file hashes are listed in \texttt{MANIFEST.sha256}, with input versions
+in \texttt{PROVENANCE.json}. The programs are:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+File & Exact checks reproduced\\
+\midrule
+\texttt{checks/endpoint.py} & Three-compartment example and maximal minors\\
+\texttt{checks/reviewer.py} & Eight interior, degenerate, and endpoint cases\\
+\texttt{checks/gate.py} & Two-leak example and symbolic kernel identity\\
+\bottomrule
+\end{tabular}
+\end{center}
+Use Python~3 with SymPy~1.14.0; the first two programs use only the
+standard library. From the packet directory, run
+\begin{verbatim}
+python3 -B reproduce.py
+\end{verbatim}
+The runner verifies the pinned inputs and executable copies, executes
+the programs in temporary directories, and compares their exact data
+with \texttt{baseline/*.json}. Only timing, peak memory, and the Python
+version are excluded from comparison. The summary and computed data
+are written to \texttt{results/reproduction.json}. Run without
+\texttt{-O}, since the programs use assertions. No parent repository,
+network access, or additional service is needed; the interpreter and
+SymPy must already be installed. These finite checks supplement the
+proof and do not establish the theorem by extrapolation.
+
+\begin{thebibliography}{9}
+\bibitem{Ahmed}
+S.~Ahmed, N.~Crepeau, P.~R.~Dessauer Jr., A.~Edozie, O.~Garcia-Lopez,
+T.~Grimsley, J.~Lopez Garcia, V.~Neri, and A.~Shiu.
+\emph{Identifiability of directed-cycle and catenary linear compartmental models}.
+arXiv:2412.05283v3, 2025.
+\url{https://arxiv.org/abs/2412.05283v3}.
+The statement analyzed is Conjecture~4.6 of this version.
+\bibitem{GOS}
+S.~Gerberding, N.~Obatake, and A.~Shiu.
+\emph{Identifiability of Linear Compartmental Models: The Effect of Moving Inputs, Outputs, and Leaks}.
+arXiv:1910.13549v2, 2020.
+\url{https://arxiv.org/abs/1910.13549v2}.
+The coefficient formula is used as stated and attributed in \cite[Lemma~3.10]{Ahmed}.
+\bibitem{DS}
+Q.~Dai and Z.~Shao.
+\emph{External Coupling as a Pivotal Boundary for Internal Coupling Effects on Consensus in Cyclic Networks}.
+2026. \url{https://doi.org/10.1109/TASE.2026.3734096}.
+Full text not consulted; relevance to this hyperplane inclusion remains unassessed.
+\end{thebibliography}
+\end{document}

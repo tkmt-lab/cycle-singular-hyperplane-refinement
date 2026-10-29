@@ -1,0 +1,57 @@
+{
+  "status": "v1.0.0 local candidate",
+  "publication_authorized": false,
+  "formal_certification": false,
+  "human_peer_review": false,
+  "new_manuscript_review": {
+    "verdict": "CORRECT",
+    "minor_comments": 2,
+    "record": "VERIFICATION-RECORD.md",
+    "external_source_audit": false,
+    "revision_independently_rereviewed": false
+  },
+  "claims": [
+    {
+      "id": "interior-hyperplane",
+      "statement": "For all n>=3, a in [p-1] minus L and ell in L intersect [p-1], the real hyperplane r_ell+lambda_ell=r_a lies in the coefficient-Jacobian rank-defect set of a generically locally identifiable cycle.",
+      "paper": "Theorem 1 and Corollary 2",
+      "proof": "paper.tex, eq:direction through eq:kernel, including the zero-vector branch",
+      "prior_review": "VERIFICATION-RECORD.md",
+      "review_scope": "staged, with advance hints; all-n proof checked; current manuscript not newly reviewed",
+      "finite_checks": [
+        "checks/reviewer.py",
+        "checks/gate.py"
+      ]
+    },
+    {
+      "id": "endpoint-counterexample",
+      "statement": "The positive n=3,p=2,L={2} point (2,1,3,1) lies on r2+lambda2=r1 but its 5x4 coefficient Jacobian has rank 4, with selected minor -12.",
+      "paper": "Proposition 3",
+      "proof": "explicit coefficient map and minor -A^2 C",
+      "prior_review": "VERIFICATION-RECORD.md",
+      "finite_checks": [
+        "checks/endpoint.py",
+        "checks/reviewer.py"
+      ]
+    },
+    {
+      "id": "endpoint-mechanism",
+      "statement": "At ell=p, the same polynomial direction gives V(kappa)=kappa, so it is not a kernel direction at positive rates.",
+      "paper": "Section 4 after Proposition 3",
+      "proof": "membership of r_ell in the path product kappa",
+      "limitation": "Does not assert regularity of every endpoint point."
+    }
+  ],
+  "exclusions": [
+    "Other theorems in the source paper",
+    "Complete singular-locus classification",
+    "Pointwise global nonidentifiability from rank loss",
+    "Finite/noisy inference",
+    "Priority or absence of a prior correction"
+  ],
+  "unread_primary_full_texts": [
+    "SIAM journal version of Ahmed et al.",
+    "Dai-Shao DOI 10.1109/TASE.2026.3734096"
+  ],
+  "packet_version": "1.0.0"
+}
