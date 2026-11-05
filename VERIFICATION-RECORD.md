@@ -1,6 +1,6 @@
 # Verification record
 
-Version 1.0.0. This local package contains the corrected manuscript after two MINOR AI-review comments. The PDF, TeX, three check programs and their baselines are unchanged from that revision. PROVENANCE.json and MANIFEST.sha256 pin the public payload. Internal instructions and review snapshots are excluded; the unchanged runner validates the shipped files directly.
+Version 1.0.0. This release contains the corrected manuscript after two MINOR AI-review comments. The manuscript received two expository corrections on 30 October 2026. Release metadata and the PDF were updated for version 1.0.0; mathematical claims, three check programs and their baselines remain unchanged. PROVENANCE.json and MANIFEST.sha256 pin the public payload. Internal instructions and review snapshots are excluded; the unchanged runner validates the shipped files directly.
 
 The endpoint was checked by a staged separate derivation with a supplied example, then comparison to the producer. The interior all-n proof was separately reconstructed before reading the producer proof, with advance kernel and zero-vector hints and prior endpoint knowledge. These were not hint-free blind reviews or new isolated agents. The present manuscript's later AI review reported CORRECT with two MINOR requests, now applied. It did not audit external sources or earlier review histories. Applying the corrections is not a second independent referee review.
 

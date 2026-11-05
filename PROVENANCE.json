@@ -3,14 +3,14 @@
   "sources": [
     {
       "snapshot_path": "paper.pdf",
-      "bytes": 69861,
-      "sha256": "1fce3f2680c857237506740588bda99d7eeb2bdc6b6340bef6df74385d83b6de",
+      "bytes": 275410,
+      "sha256": "d6e38c592839e9c9324150e00ba10f86b27108602f8ec8d29cab395feb487d95",
       "source_sha256": "1fce3f2680c857237506740588bda99d7eeb2bdc6b6340bef6df74385d83b6de"
     },
     {
       "snapshot_path": "paper.tex",
-      "bytes": 13353,
-      "sha256": "7a115dfd78a959286a371def31cf394fbff28a4539d8ce90e82d6f2d86743fb2",
+      "bytes": 13410,
+      "sha256": "b69bdf1de1a276e6abbe0c1e3a75889f513ad02ef37d05614d8b7e1bfa6cbaf7",
       "source_sha256": "7a115dfd78a959286a371def31cf394fbff28a4539d8ce90e82d6f2d86743fb2"
     },
     {
@@ -27,8 +27,8 @@
     },
     {
       "snapshot_path": "claims.json",
-      "bytes": 2231,
-      "sha256": "7fea2e2ccc4be5a591de7c968e765ea1a34b8948dcae84787e764021b4bff61c",
+      "bytes": 2198,
+      "sha256": "9f19620a05e4f48228e233f027b6a5924afcf32e208bedeeab58dbf667d1c792",
       "source_sha256": "65aa4e049d643a48a788f46a555ac22eb9b0f658a228703c6036d4c2ee9c8202"
     },
     {
@@ -68,5 +68,7 @@
       "source_sha256": "70bb734fb37230f6d326c0c1ed1ff6f25c29c85eaa22eee70eeb7c6b148b8095"
     }
   ],
-  "exact_copies": {}
+  "exact_copies": {},
+  "release_base_commit": "d39cecb85393a79c05a34b4e0532efbbdbeb782a",
+  "source_hash_scope": "source_sha256 identifies historical source_commit content; sha256 identifies the release payload."
 }

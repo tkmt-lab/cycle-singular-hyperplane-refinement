@@ -1,0 +1,21 @@
+{
+  "title": "A quantifier refinement for singular hyperplanes in directed-cycle compartmental models",
+  "version": "1.0.0",
+  "publication_date": "2026-11-17",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "creators": [
+    {
+      "name": "Takimoto, Tatsuhiko",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/tkmt-lab/cycle-singular-hyperplane-refinement",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ]
+}
