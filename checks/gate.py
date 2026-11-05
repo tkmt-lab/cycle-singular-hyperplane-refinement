@@ -1,5 +1,5 @@
 """Exact fixed-point check, two model derivations and two arithmetic routes.
-Run: studies/R016/longterm/.venv/bin/python -B studies/R045/next1/check_gate.py
+Run from the package root via: python3 -B reproduce.py
 """
 import itertools
 import json

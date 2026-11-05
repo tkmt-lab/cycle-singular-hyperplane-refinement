@@ -45,8 +45,8 @@
     },
     {
       "snapshot_path": "checks/gate.py",
-      "bytes": 5958,
-      "sha256": "26cd7a173f9dea3dff302e3fd89748391dffb37f19dd855b8c7528b486b317de",
+      "bytes": 5933,
+      "sha256": "912ae57aded7750c328e23c23f0acd5536d0cb30c9a692108671c409cebeb756",
       "source_sha256": "26cd7a173f9dea3dff302e3fd89748391dffb37f19dd855b8c7528b486b317de"
     },
     {
