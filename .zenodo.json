@@ -17,5 +17,6 @@
       "relation": "isSupplementedBy",
       "scheme": "url"
     }
-  ]
+  ],
+  "description": "For directed-cycle linear compartmental models with input at vertex 1 and output at vertex p, this article refines the quantifiers of Conjecture 4.6 in Ahmed et al., arXiv:2412.05283v3. For generically locally identifiable models, it proves the proposed coefficient-Jacobian rank-defect inclusion for every n>=3 when a is a non-leak index before p and the leak index ell is also before p. The proof covers the entire real hyperplane, including zero and negative rates, using the known coefficient map. A positive three-compartment example with ell=p has full column rank and disproves the universal endpoint inclusion. Exact finite checks accompany the polynomial proof. The result concerns this hyperplane inclusion; it does not classify the whole singular locus or establish pointwise global nonidentifiability or finite/noisy-data inference. The final SIAM full text and the Dai–Shao full text have not been read; the relevance of the latter has not been evaluated, and prior refinements or corrections have not been excluded. The work has not undergone human peer review."
 }

@@ -16,7 +16,7 @@
       "paper": "Theorem 1 and Corollary 2",
       "proof": "paper.tex, eq:direction through eq:kernel, including the zero-vector branch",
       "prior_review": "VERIFICATION-RECORD.md",
-      "review_scope": "staged, with advance hints; all-n proof checked; current manuscript not newly reviewed",
+      "review_scope": "historical staged proof check, with advance hints; all-n proof checked; later manuscript review recorded in new_manuscript_review",
       "finite_checks": [
         "checks/reviewer.py",
         "checks/gate.py"

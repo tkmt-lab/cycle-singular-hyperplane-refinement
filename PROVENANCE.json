@@ -3,14 +3,14 @@
   "sources": [
     {
       "snapshot_path": "paper.pdf",
-      "bytes": 275410,
-      "sha256": "d6e38c592839e9c9324150e00ba10f86b27108602f8ec8d29cab395feb487d95",
+      "bytes": 275426,
+      "sha256": "5010a82a007b4dde5ae13784915526dd413957d7b818c67805d10b42d64cfde1",
       "source_sha256": "1fce3f2680c857237506740588bda99d7eeb2bdc6b6340bef6df74385d83b6de"
     },
     {
       "snapshot_path": "paper.tex",
-      "bytes": 13410,
-      "sha256": "b69bdf1de1a276e6abbe0c1e3a75889f513ad02ef37d05614d8b7e1bfa6cbaf7",
+      "bytes": 13425,
+      "sha256": "952399bb3cec62d6bc65bc2c131ea88e25a09d5fdb1b2616d8a9c4fa5fe6447f",
       "source_sha256": "7a115dfd78a959286a371def31cf394fbff28a4539d8ce90e82d6f2d86743fb2"
     },
     {
@@ -27,8 +27,8 @@
     },
     {
       "snapshot_path": "claims.json",
-      "bytes": 2198,
-      "sha256": "9f19620a05e4f48228e233f027b6a5924afcf32e208bedeeab58dbf667d1c792",
+      "bytes": 2241,
+      "sha256": "5f05d7cfa534857ae175d01a4ed5562d5ecbe9e5b5ea2f0dcf5745512acdb223",
       "source_sha256": "65aa4e049d643a48a788f46a555ac22eb9b0f658a228703c6036d4c2ee9c8202"
     },
     {
